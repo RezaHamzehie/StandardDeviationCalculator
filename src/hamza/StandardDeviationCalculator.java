@@ -24,8 +24,26 @@ public class StandardDeviationCalculator extends ConsoleProgram {
      */
     @Override
     public void run() {
-        double [] numbers={1.2,3.6,5.7,8.9};
-        println(stDev(numbers));
+        println("This program calculates the standard deviation of a given double array.");
+
+        double [] theArray=getTheArray();
+        double stDev=stDev(theArray);
+        println("The standard deviation is: "+stDev);
+    }
+
+    /**
+     * gets the array from user
+     * @return the constructed array
+     */
+    private double[] getTheArray() {
+        int count = readInt("Enter the count of elements element in the array: ");
+        double [] theArray= new double[count];
+
+        for (int i = 0; i < count; i++) {
+            theArray[i]=readDouble("enter element "+i+": ");
+        }
+
+        return theArray;
     }
 
     /**
